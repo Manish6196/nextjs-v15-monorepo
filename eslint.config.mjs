@@ -24,6 +24,10 @@ export default [
               sourceTag: 'scope:naboo',
               onlyDependOnLibsWithTags: ['scope:shared', 'scope:naboo'],
             },
+            {
+              sourceTag: 'scope:naboo-e2e',
+              onlyDependOnLibsWithTags: ['scope:shared', 'scope:naboo-e2e'],
+            },
           ],
         },
       ],
