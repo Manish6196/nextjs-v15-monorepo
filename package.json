@@ -2,7 +2,11 @@
   "name": "@nextjs-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "concurrently \"nx run naboo:dev\" \"nx serve local-assets --tenantName=default\"",
+    "build": "nx build naboo && nx build local-assets",
+    "start": "concurrently \"nx run naboo:start\" \"nx serve local-assets --tenantName=default --prod\""
+  },
   "private": true,
   "dependencies": {
     "next": "~15.1.4",
@@ -33,6 +37,7 @@
     "@types/react-dom": "19.0.0",
     "autoprefixer": "10.4.13",
     "babel-jest": "^29.7.0",
+    "concurrently": "^9.1.2",
     "eslint": "^9.8.0",
     "eslint-config-next": "14.2.16",
     "eslint-config-prettier": "^9.0.0",
@@ -46,6 +51,7 @@
     "nx": "20.4.0",
     "postcss": "8.4.38",
     "prettier": "^2.6.2",
+    "sass": "^1.83.4",
     "tailwindcss": "3.4.3",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",

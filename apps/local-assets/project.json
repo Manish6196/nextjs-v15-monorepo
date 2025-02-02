@@ -1,0 +1,21 @@
+{
+  "name": "local-assets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/local-assets",
+  "projectType": "application",
+  "tags": ["scope:local-assets"],
+  "// targets": "to see all targets run: nx show project local-assets --web",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node apps/local-assets/scripts/serve.js --tenantName={args.tenantName}"
+      },
+      "configurations": {
+        "production": {
+          "command": "node apps/local-assets/scripts/serve.js --tenantName={args.tenantName} --prod"
+        }
+      }
+    }
+  }
+}
