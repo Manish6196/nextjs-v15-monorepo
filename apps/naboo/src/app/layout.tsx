@@ -1,5 +1,4 @@
 import './global.css';
-import TenantStyles from './TenantStyles';
 
 export const metadata = {
   title: 'Welcome to naboo',
@@ -13,7 +12,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <TenantStyles />
+      <head>
+        <link
+          id="tenant-stylesheet"
+          rel="stylesheet"
+          href={'http://localhost:3000/assets/default/css/tenant.css'}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
